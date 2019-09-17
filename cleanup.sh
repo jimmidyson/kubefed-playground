@@ -8,7 +8,6 @@ export DEMO_AUTO_RUN=1
 export DEMO_RUN_FAST=1
 
 desc "Nuke it all"
-readonly CLUSTERS=('cluster1' 'cluster2' 'cluster3' 'cluster4')
 for CLUSTER in ${CLUSTERS[@]}; do
   run "kind delete cluster --name ${CLUSTER} || true"
 done
