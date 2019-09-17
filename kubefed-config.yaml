@@ -1,0 +1,31 @@
+apiVersion: core.kubefed.io/v1beta1
+kind: KubeFedConfig
+metadata:
+  name: kubefed
+  namespace: kube-federation-system
+spec:
+  clusterHealthCheck:
+    failureThreshold: 3
+    period: 10s
+    successThreshold: 1
+    timeout: 3s
+  controllerDuration:
+    availableDelay: 20s
+    unavailableDelay: 60s
+  featureGates:
+  - configuration: Enabled
+    name: PushReconciler
+  - configuration: Enabled
+    name: SchedulerPreferences
+  - configuration: Enabled
+    name: CrossClusterServiceDiscovery
+  - configuration: Enabled
+    name: FederatedIngress
+  leaderElect:
+    leaseDuration: 15s
+    renewDeadline: 10s
+    resourceLock: configmaps
+    retryPeriod: 5s
+  scope: Cluster
+  syncController:
+    adoptResources: Enabled

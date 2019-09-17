@@ -1,0 +1,9 @@
+apiVersion: types.kubefed.io/v1beta1
+kind: FederatedNamespace
+metadata:
+  name: demos
+  namespace: demos
+spec:
+  placement:
+    clusterSelector:
+      matchLabels: {}
