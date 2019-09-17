@@ -1,5 +1,10 @@
 ## Kubefed playground
 
+## Requirements
+
+Install pv if running on OSX: `brew install pv`
+Use a kind version >= 0.5.1
+
 ### Set up kubefed clusters using kind
 
 To create kubefed clusters using `kind` run:
